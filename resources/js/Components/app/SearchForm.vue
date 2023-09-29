@@ -1,5 +1,5 @@
 <template>
-    <form class="w-[600px] h-[80px] flex items-center">
+    <form class="w-[600px] h-[80px] flex items-center mx-auto">
         <TextInput type="text"
                    class="block w-full mr-2"
                    v-model="form.search"
