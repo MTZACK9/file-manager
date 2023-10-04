@@ -21,7 +21,9 @@
             >
                 <div class="px-1 py-1">
                     <MenuItem v-slot="{ active }">
-                        <a href="" class="text-gray-700 block px-4 py-2 text-sm">New Folder</a>
+                        <a href="#" @click.prevent="showCreateFolderModal" class="text-gray-700 block px-4 py-2 text-sm">
+                            New Folder
+                        </a>
                     </MenuItem>
                 </div>
                 <div class="px-1 py-1">
@@ -42,6 +44,9 @@
 import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
 import ResponsiveNavLink from "@/Components/ResponsiveNavLink.vue";
 
+function showCreateFolderModal(){
+
+}
 </script>
 
 <style scoped>
