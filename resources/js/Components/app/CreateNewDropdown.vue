@@ -38,14 +38,21 @@
             </MenuItems>
         </transition>
     </Menu>
+    <CreateFolderModal v-model="createFolderModal"/>
 </template>
 
 <script setup>
 import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
 import ResponsiveNavLink from "@/Components/ResponsiveNavLink.vue";
+import CreateFolderModal from "@/Components/app/createFolderModal.vue";
+import {ref} from "vue";
 
+
+
+//Refs
+const createFolderModal = ref(false)
 function showCreateFolderModal(){
-
+    createFolderModal.value = true;
 }
 </script>
 
