@@ -1,11 +1,11 @@
 <template>
     <Menu as="div" class="relative block text-left">
-            <MenuButton
-                class="flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-insert ring-gray-300 hover:bg-gray-50"
-            >
-               Create New
+        <MenuButton
+            class="flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-insert ring-gray-300 hover:bg-gray-50"
+        >
+            Create New
 
-            </MenuButton>
+        </MenuButton>
 
 
         <transition
@@ -21,18 +21,15 @@
             >
                 <div class="px-1 py-1">
                     <MenuItem v-slot="{ active }">
-                        <a href="#" @click.prevent="showCreateFolderModal" class="text-gray-700 block px-4 py-2 text-sm">
+                        <a href="#" @click.prevent="showCreateFolderModal"
+                           class="text-gray-700 block px-4 py-2 text-sm">
                             New Folder
                         </a>
                     </MenuItem>
                 </div>
                 <div class="px-1 py-1">
-                    <MenuItem v-slot="{ active }">
-                        <a href="" class="text-gray-700 block px-4 py-2 text-sm">Upload Files</a>
-                    </MenuItem>
-                    <MenuItem v-slot="{ active }">
-                        <a href="" class="text-gray-700 block px-4 py-2 text-sm">Upload Folder</a>
-                    </MenuItem>
+                    <FileUploadMenuItem/>
+                    <FolderUploadMenuItem/>
                 </div>
 
             </MenuItems>
@@ -42,16 +39,18 @@
 </template>
 
 <script setup>
-import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
+import {Menu, MenuButton, MenuItems, MenuItem} from '@headlessui/vue'
 import ResponsiveNavLink from "@/Components/ResponsiveNavLink.vue";
 import CreateFolderModal from "@/Components/app/createFolderModal.vue";
 import {ref} from "vue";
-
+import FileUploadMenuItem from "@/Components/app/FileUploadMenuItem.vue";
+import FolderUploadMenuItem from "@/Components/app/FolderUploadMenuItem.vue";
 
 
 //Refs
 const createFolderModal = ref(false)
-function showCreateFolderModal(){
+
+function showCreateFolderModal() {
     createFolderModal.value = true;
 }
 </script>
